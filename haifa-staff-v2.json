@@ -1,0 +1,8 @@
+{
+    "version": "2.0.98",
+    "requires_wp": "6.0",
+    "requires_php": "8.0",
+    "details_url": "https://alternativ.co.il/plugins/haifa-staff-v2",
+    "description": "תוסף עצמאי לניהול ותצוגת רשימות סגל באתרי אוניברסיטת חיפה. ללא תלות ב-ACF.",
+    "changelog": "<h4>2.0.4 – 2026-04-14</h4><ul><li>הסרת בלוק המיגרציה title_main (חד-פעמי — בוצע).</li><li>אופטימיזציות קוד כלליות.</li></ul><h4>2.0.3</h4><ul><li>Staff @mention: תמיכה ב-Elementor editor + remote picker</li><li>Canonical URL: הסרת כפילויות מ-Yoast, Rank Math, AIOSEO</li><li>redirect_canonical: מניעת הפניה לא-נחוצה ב-URLs של סגל עם context</li><li>Schema.org Person structured data לפרופילי סגל אקדמאי</li></ul><h4>2.0.2</h4><ul><li>Polylang: תמיכה ב-/en/ URL prefix — set lang=ltr ב-language_attributes</li><li>Staff title: תמיכה ב-Yoast SEO ו-Rank Math (pre_get_document_title, wpseo_title, rank_math/frontend/title)</li><li>תיקון early query fix ב-wp hook לכותרת הדפדפן הנכונה</li></ul><h4>2.0.1</h4><ul><li>Single Staff – תיקון כותרת דף</li></ul><h4>2.0.0</h4><ul><li>Initial standalone release — no ACF dependency</li></ul>"
+}

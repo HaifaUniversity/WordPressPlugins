@@ -1,0 +1,944 @@
+    {
+        "key": "group_staffs_details",
+        "title": "פרטי סגל",
+        "fields": [
+            {
+                "key": "field_staff_status",
+                "label": "סטטוס",
+                "name": "status",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "alive": "פעיל",
+                    "retired": "גימלאות",
+                    "dead": "נפטר"
+                },
+                "default_value": "alive",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "allow_in_bindings": 1,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_staff_date_of_death",
+                "label": "תאריך פטירה",
+                "name": "date_of_death",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "==",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "Y-m-d",
+                "first_day": 0,
+                "default_to_current_date": 0,
+                "allow_in_bindings": 1
+            },
+            {
+                "key": "field_68afdc5ae1dba",
+                "label": "פרטים אישיים",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "allow_backendsearch": false,
+                "show_column_filter": false,
+                "allow_bulkedit": false,
+                "allow_quickedit": false,
+                "show_column": false,
+                "show_column_weight": 1000,
+                "show_column_sortable": false,
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_staff_image",
+                "label": "תמונת פרופיל",
+                "name": "staff_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "מידות התמונה הנדרשות: 360X360 פיקסלים (px).<br>\r\nנפח הקובץ המקסימלי: 200KB.<br>\r\n<b><a href=\"https:\/\/multimedia.haifa.ac.il\/?p=963\" target=\"_blank\">לחצו על הקישור<\/a><\/b> להדרכת ביצוע האופטימיזציה (אם נדרשת).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": 360,
+                "min_height": 360,
+                "min_size": "",
+                "max_width": 360,
+                "max_height": 360,
+                "max_size": 200,
+                "mime_types": "jpg,png",
+                "allow_in_bindings": 1,
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_68b68b19c888a",
+                "label": "סוג סגל",
+                "name": "staff_type",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "choices": {
+                    "academic": "אקדמי",
+                    "administrative": "מנהלי"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 0,
+                "layout": "horizontal",
+                "toggle": 0,
+                "save_custom": 0,
+                "custom_choice_button_text": "Add new choice"
+            },
+            {
+                "key": "field_68b97fcc65d9d",
+                "label": "השתייכות סגל אקדמי",
+                "name": "staff_academic_type",
+                "aria-label": "",
+                "type": "radio",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b68b19c888a",
+                            "operator": "==",
+                            "value": "academic"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "choices": {
+                    "senior": "בכיר",
+                    "junior": "זוטר"
+                },
+                "default_value": "",
+                "return_format": "value",
+                "allow_null": 0,
+                "other_choice": 0,
+                "allow_in_bindings": 0,
+                "layout": "horizontal",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_a1b2c3d4e5",
+                "label": "שם פרטי",
+                "name": "first_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_f6g7h8i9j0",
+                "label": "שם משפחה",
+                "name": "last_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68b6731bbd4ba",
+                "label": "תואר",
+                "name": "title_main",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "choices": {
+                    "mr": "מר",
+                    "mrs": "גב'",
+                    "dr": "ד\"ר",
+                    "prof": "פרופ'",
+                    "other": "אחר"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 1,
+                "allow_in_bindings": 1,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_68b676f470671",
+                "label": "תואר אחר",
+                "name": "title_other",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b6731bbd4ba",
+                            "operator": "==",
+                            "value": "other"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68b6d2ff316be",
+                "label": "תפקיד",
+                "name": "position",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_k1l2m3n4o5",
+                "label": "דרגה אקדמית",
+                "name": "academic_degree_main",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "choices": {
+                    "professor": "פרופסור מן המניין",
+                    "associate_professor": "פרופסור חבר",
+                    "professor_emeritus": "פרופסור אמריטוס",
+                    "senior_lecturer": "מרצה בכיר",
+                    "other": "אחר"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 1,
+                "allow_in_bindings": 1,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_68b6d16d3b0c1",
+                "label": "דרגה אחרת",
+                "name": "academic_degree_other",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_k1l2m3n4o5",
+                            "operator": "==",
+                            "value": "other"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_u1v2w3x4y5",
+                "label": "כתובת אימייל",
+                "name": "email",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_e5f6g7h8i9",
+                "label": "טלפון פנימי",
+                "name": "inner_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_z0a1b2c3d4",
+                "label": "טלפון חיצוני",
+                "name": "external_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_j0k1l2m3n4",
+                "label": "חדר",
+                "name": "office_room",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_o5p6q7r8s9",
+                "label": "שעות קבלה",
+                "name": "office_hours",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "below-prev",
+                    "id": ""
+                },
+                "default_value": "בתיאום מראש",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6924140cd5fc5",
+                "label": "קישורים",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b68b19c888a",
+                            "operator": "==",
+                            "value": "academic"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_staff_cris_website",
+                "label": "קישור CRIS",
+                "name": "cris_website",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b97fcc65d9d",
+                            "operator": "==",
+                            "value": "senior"
+                        },
+                        {
+                            "field": "field_staff_status",
+                            "operator": "!=",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_68ba8bf076625",
+                "label": "קישור CRIS",
+                "name": "cris_website_2",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b97fcc65d9d",
+                            "operator": "==",
+                            "value": "junior"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_staff_status",
+                            "operator": "==",
+                            "value": "dead"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_t0u1v2w3x4",
+                "label": "רשתות חברתיות",
+                "name": "socials",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "allow_backendsearch": false,
+                "show_column_filter": false,
+                "allow_bulkedit": false,
+                "allow_quickedit": false,
+                "show_column": false,
+                "show_column_weight": 1000,
+                "show_column_sortable": false,
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 10,
+                "collapsed": "",
+                "button_label": "הוספת רשת חברתית",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_social_platform",
+                        "label": "רשת חברתית",
+                        "name": "platform",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "allow_backendsearch": false,
+                        "show_column_filter": 0,
+                        "allow_bulkedit": 0,
+                        "allow_quickedit": 0,
+                        "show_column": 0,
+                        "show_column_weight": 1000,
+                        "show_column_sortable": false,
+                        "choices": {
+                            "facebook": "Facebook",
+                            "twitter": "Twitter",
+                            "linkedin": "LinkedIn",
+                            "instagram": "Instagram",
+                            "youtube": "YouTube",
+                            "researchgate": "ResearchGate",
+                            "academia": "Academia.edu",
+                            "orcid": "ORCID",
+                            "google_scholar": "Google Scholar",
+                            "other": "Other"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "allow_in_bindings": 1,
+                        "ui": 1,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_t0u1v2w3x4"
+                    },
+                    {
+                        "key": "field_social_url",
+                        "label": "URL",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "allow_backendsearch": false,
+                        "show_column_filter": false,
+                        "allow_bulkedit": false,
+                        "allow_quickedit": false,
+                        "show_column": false,
+                        "show_column_weight": 1000,
+                        "show_column_sortable": false,
+                        "default_value": "",
+                        "placeholder": "",
+                        "parent_repeater": "field_t0u1v2w3x4"
+                    }
+                ]
+            },
+            {
+                "key": "field_staff_personal_website",
+                "label": "אתר אישי",
+                "name": "personal_website",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_68afdcb0e1dbc",
+                "label": "מידע",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68b68b19c888a",
+                            "operator": "==",
+                            "value": "academic"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_staff_about",
+                "label": "טאב אודות",
+                "name": "about",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "allow_backendsearch": 0,
+                "show_column_filter": false,
+                "allow_bulkedit": false,
+                "allow_quickedit": false,
+                "show_column": false,
+                "show_column_weight": 1000,
+                "show_column_sortable": false,
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_publications",
+                "label": "פרסומים",
+                "name": "publications",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_education",
+                "label": "השכלה",
+                "name": "education",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "allow_backendsearch": 0,
+                "show_column_filter": false,
+                "allow_bulkedit": false,
+                "allow_quickedit": false,
+                "show_column": false,
+                "show_column_weight": 1000,
+                "show_column_sortable": false,
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_academic_background",
+                "label": "רקע אקדמי",
+                "name": "academic_background",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_reserach_areas",
+                "label": "תחומי מחקר",
+                "name": "reserach_areas",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_media",
+                "label": "מדיה",
+                "name": "media",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_prizes",
+                "label": "פרסים",
+                "name": "prizes",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_staff_additional_info",
+                "label": "מידע נוסף",
+                "name": "additional_info",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "staff"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "discussion",
+            "comments"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
